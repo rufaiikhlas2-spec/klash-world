@@ -1,0 +1,1173 @@
+/* =========================================
+   KLASH WORLD
+   PROFESSIONAL ARTIST WEBSITE
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: #f5f5f5;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76px;
+
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(8, 8, 8, 0.78);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.logo span {
+  color: #999;
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  position: relative;
+
+  color: #999;
+
+  font-size: 0.72rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #fff;
+
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 1.7rem;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.section {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding: 140px 7%;
+}
+
+.eyebrow {
+  color: #777;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 25px;
+}
+
+.section-heading {
+  margin-bottom: 70px;
+}
+
+.section-heading h2 {
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+
+  line-height: 0.86;
+
+  letter-spacing: -5px;
+
+  font-weight: 900;
+}
+
+.section-heading h2 span {
+  color: #666;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+  display: inline-block;
+
+  padding: 15px 25px;
+
+  border: 1px solid #555;
+
+  font-size: 0.7rem;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.primary-btn {
+  background: #fff;
+
+  color: #000;
+
+  border-color: #fff;
+}
+
+.primary-btn:hover {
+  background: transparent;
+
+  color: #fff;
+}
+
+.secondary-btn {
+  color: #fff;
+
+  border-color: #444;
+}
+
+.secondary-btn:hover {
+  background: #fff;
+
+  color: #000;
+
+  border-color: #fff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 150px 7% 90px;
+
+  border-bottom: 1px solid #202020;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(255,255,255,0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(255,255,255,0.035),
+      transparent 30%
+    ),
+    #080808;
+}
+
+.hero::before {
+  content: "KLASH";
+
+  position: absolute;
+
+  right: -5%;
+  bottom: -8%;
+
+  font-size: clamp(7rem, 25vw, 22rem);
+
+  font-weight: 900;
+
+  color: rgba(255,255,255,0.025);
+
+  line-height: 0.8;
+
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  animation: heroEnter 1s ease both;
+}
+
+.hero h1 {
+  font-size: clamp(4.8rem, 15vw, 12rem);
+
+  line-height: 0.77;
+
+  letter-spacing: -9px;
+
+  font-weight: 900;
+
+  margin-bottom: 45px;
+}
+
+.hero h1 span {
+  color: #666;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-weight: bold;
+
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  max-width: 600px;
+
+  color: #888;
+
+  font-size: 1rem;
+
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+@keyframes heroEnter {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-section {
+  border-bottom: 1px solid #202020;
+}
+
+.about-content {
+  max-width: 850px;
+}
+
+.about-content p {
+  color: #8d8d8d;
+
+  margin-bottom: 25px;
+}
+
+.about-content .large-text {
+  color: #eee;
+
+  font-size: clamp(1.4rem, 3vw, 2.25rem);
+
+  line-height: 1.35;
+
+  margin-bottom: 35px;
+}
+
+.about-content strong {
+  color: #fff;
+}
+
+.facts {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #303030;
+
+  border-bottom: 1px solid #303030;
+}
+
+.fact {
+  padding: 27px 15px;
+
+  border-right: 1px solid #303030;
+
+  transition: background 0.3s ease;
+}
+
+.fact:hover {
+  background: #111;
+}
+
+.fact:last-child {
+  border-right: none;
+}
+
+.fact span {
+  display: block;
+
+  color: #666;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+}
+
+.fact strong {
+  font-size: 0.9rem;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.story-section {
+  background: #0c0c0c;
+
+  border-bottom: 1px solid #202020;
+}
+
+.story-content {
+  max-width: 850px;
+
+  margin-left: auto;
+}
+
+.story-content p {
+  color: #909090;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 28px;
+}
+
+.story-content strong {
+  color: #fff;
+}
+
+.story-highlight {
+  color: #fff !important;
+
+  font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
+
+  line-height: 1.3;
+
+  padding-top: 20px;
+}
+
+
+/* =========================================
+   EDUCATION
+========================================= */
+
+.education-section {
+  border-bottom: 1px solid #202020;
+}
+
+.timeline {
+  max-width: 900px;
+
+  margin: auto;
+}
+
+.timeline-item {
+  display: grid;
+
+  grid-template-columns: 80px 1fr;
+
+  gap: 30px;
+
+  padding: 38px 0;
+
+  border-top: 1px solid #303030;
+
+  transition: padding-left 0.3s ease;
+}
+
+.timeline-item:last-child {
+  border-bottom: 1px solid #303030;
+}
+
+.timeline-item:hover {
+  padding-left: 10px;
+}
+
+.timeline-number {
+  color: #666;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 2px;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  color: #ddd;
+
+  margin-bottom: 5px;
+}
+
+.timeline-content span {
+  color: #666;
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================================
+   MUSIC RELEASE
+========================================= */
+
+.music-section {
+  background: #0c0c0c;
+
+  border-bottom: 1px solid #202020;
+}
+
+.music-release {
+  max-width: 950px;
+
+  margin-left: auto;
+
+  border: 1px solid #303030;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111 0%,
+      #0a0a0a 55%,
+      #111 100%
+    );
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.music-release::before {
+  content: "B";
+
+  position: absolute;
+
+  right: -25px;
+  bottom: -80px;
+
+  font-size: 18rem;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  color: rgba(255,255,255,0.025);
+
+  pointer-events: none;
+}
+
+.release-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 28px;
+
+  border-bottom: 1px solid #303030;
+}
+
+.release-label,
+.release-status {
+  font-size: 0.62rem;
+
+  letter-spacing: 2px;
+}
+
+.release-label {
+  color: #aaa;
+}
+
+.release-status {
+  color: #666;
+}
+
+.release-main {
+  display: grid;
+
+  grid-template-columns: 130px 1fr;
+
+  gap: 45px;
+
+  padding: 65px 55px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.release-number {
+  font-size: 4rem;
+
+  font-weight: 900;
+
+  color: #333;
+
+  line-height: 1;
+}
+
+.release-info h3 {
+  font-size: clamp(4rem, 10vw, 8rem);
+
+  line-height: 0.8;
+
+  letter-spacing: -6px;
+
+  margin-bottom: 15px;
+}
+
+.release-by {
+  color: #777 !important;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-size: 0.72rem;
+
+  margin-bottom: 35px !important;
+}
+
+.release-description {
+  max-width: 600px;
+
+  color: #999;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px !important;
+}
+
+.music-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 35px;
+}
+
+.music-tags span {
+  border: 1px solid #333;
+
+  padding: 8px 11px;
+
+  color: #777;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 1.5px;
+}
+
+.spotify-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px 22px;
+
+  background: #fff;
+
+  color: #000;
+
+  font-size: 0.68rem;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
+}
+
+.spotify-btn:hover {
+  background: #ddd;
+
+  transform: translateY(-3px);
+}
+
+.spotify-icon {
+  font-size: 0.8rem;
+}
+
+
+/* =========================================
+   VISION
+========================================= */
+
+.vision-section {
+  border-bottom: 1px solid #202020;
+}
+
+.vision-content {
+  max-width: 900px;
+
+  margin-left: auto;
+}
+
+.large-text {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+  line-height: 1.3;
+}
+
+.vision-content > .large-text {
+  margin-bottom: 70px;
+}
+
+.vision-list {
+  border-top: 1px solid #303030;
+}
+
+.vision-item {
+  display: grid;
+
+  grid-template-columns: 60px 180px 1fr;
+
+  gap: 25px;
+
+  padding: 30px 0;
+
+  border-bottom: 1px solid #303030;
+
+  transition: padding-left 0.3s ease;
+}
+
+.vision-item:hover {
+  padding-left: 10px;
+}
+
+.vision-item span {
+  color: #666;
+
+  font-size: 0.72rem;
+}
+
+.vision-item strong {
+  font-size: 1.1rem;
+}
+
+.vision-item p {
+  color: #888;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-section {
+  min-height: 55vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 100px 7%;
+
+  border-bottom: 1px solid #202020;
+
+  background: #050505;
+}
+
+.quote-section p {
+  max-width: 900px;
+
+  font-size: clamp(2rem, 5vw, 4.5rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.quote-section span {
+  margin-top: 30px;
+
+  color: #666;
+
+  letter-spacing: 3px;
+
+  font-size: 0.68rem;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+  border-bottom: 1px solid #202020;
+}
+
+.contact-content {
+  max-width: 850px;
+
+  margin-left: auto;
+}
+
+.contact-content > p {
+  color: #888;
+
+  margin-bottom: 25px;
+}
+
+.contact-content > .large-text {
+  color: #fff;
+}
+
+.social-links {
+  margin-top: 60px;
+
+  border-top: 1px solid #303030;
+}
+
+.social-links a {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 27px 0;
+
+  border-bottom: 1px solid #303030;
+
+  transition:
+    padding-left 0.3s ease,
+    background 0.3s ease;
+}
+
+.social-links a:hover {
+  padding-left: 12px;
+
+  background: #0d0d0d;
+}
+
+.social-links span {
+  color: #666;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 2px;
+}
+
+.social-links strong {
+  font-size: 0.95rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  padding: 65px 7%;
+
+  text-align: center;
+
+  background: #030303;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 15px;
+}
+
+.footer-logo span {
+  color: #777;
+
+  font-weight: 400;
+}
+
+.footer p {
+  color: #555;
+
+  font-size: 0.75rem;
+}
+
+.footer .copyright {
+  margin-top: 25px;
+
+  font-size: 0.63rem;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .site-header {
+    padding: 0 6%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+
+    top: 76px;
+
+    left: 0;
+
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    background: rgba(8,8,8,0.98);
+
+    border-bottom: 1px solid #303030;
+  }
+
+  .nav.active {
+    display: flex;
+
+    animation: menuOpen 0.25s ease both;
+  }
+
+  .nav a {
+    padding: 18px 7%;
+
+    border-top: 1px solid #202020;
+  }
+
+  .nav a::after {
+    display: none;
+  }
+
+  @keyframes menuOpen {
+
+    from {
+      opacity: 0;
+
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+  }
+
+  .section {
+    padding: 105px 6%;
+  }
+
+  .hero {
+    padding: 135px 6% 85px;
+  }
+
+  .hero h1 {
+    letter-spacing: -5px;
+  }
+
+  .hero-text {
+    font-size: 0.85rem;
+
+    letter-spacing: 2px;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .section-heading {
+    margin-bottom: 48px;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -3px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fact {
+    border-bottom: 1px solid #303030;
+  }
+
+  .fact:nth-child(2) {
+    border-right: none;
+  }
+
+  .fact:nth-child(3) {
+    border-bottom: none;
+  }
+
+  .fact:nth-child(4) {
+    border-right: none;
+
+    border-bottom: none;
+  }
+
+  .story-content,
+  .vision-content,
+  .contact-content,
+  .music-release {
+    margin-left: 0;
+  }
+
+  .timeline-item {
+    grid-template-columns: 45px 1fr;
+
+    gap: 15px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .release-top {
+    padding: 17px 18px;
+  }
+
+  .release-main {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 45px 25px;
+  }
+
+  .release-number {
+    font-size: 2.5rem;
+  }
+
+  .release-info h3 {
+    font-size: 4rem;
+
+    letter-spacing: -4px;
+  }
+
+  .release-description {
+    font-size: 0.9rem;
+  }
+
+  .vision-item {
+    grid-template-columns: 40px 1fr;
+
+    gap: 10px;
+  }
+
+  .vision-item p {
+    grid-column: 2;
+  }
+
+  .quote-section {
+    min-height: 45vh;
+
+    padding: 80px 6%;
+  }
+
+  .social-links a {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .fact,
+  .fact:nth-child(2),
+  .fact:nth-child(3),
+  .fact:nth-child(4) {
+    border-right: none;
+
+    border-bottom: 1px solid #303030;
+  }
+
+  .fact:last-child {
+    border-bottom: none;
+  }
+
+  .release-info h3 {
+    font-size: 3.8rem;
+  }
+
+}
